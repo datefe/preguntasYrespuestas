@@ -51,6 +51,3 @@ buttonB.addEventListener("click", handleButtonClick);
 buttonC.addEventListener("click", handleButtonClick);
 buttonD.addEventListener("click", handleButtonClick);
 
-for (let i = handleButtonClick; i === true;  ;) {
-  
-}

@@ -50,4 +50,3 @@ buttonA.addEventListener("click", handleButtonClick);
 buttonB.addEventListener("click", handleButtonClick);
 buttonC.addEventListener("click", handleButtonClick);
 buttonD.addEventListener("click", handleButtonClick);
-

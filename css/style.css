@@ -3,6 +3,53 @@
   padding: 0;
 }
 
-.green {
-  background-color: lightgreen;
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 15% 70% 15%;
+  font-family: sans-serif;
+  background-image: url();
+}
+
+.pantalla1 {
+  height: 100%;
+  /*  background-image: url("/img/question.svg");
+  background-position: center;
+  background-repeat: no-repeat; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pantalla2 {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 60% 40%;
+}
+
+li {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.respuestas {
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preguntas {
+  margin: 0 30px;
+  text-align: center;
+}
+
+.contenedor_preguntas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }

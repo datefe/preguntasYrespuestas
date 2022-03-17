@@ -4,25 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Preguntas Y Respuestas</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>PREGUNTAS Y RESPUESTAS</h1>
-      <p></p>
+      <h1></h1>
     </header>
+
     <main>
-      <section>
-        <h2>PREGUNTA</h2>
+      <section class="pantalla1" id="pantalla_inicio">
+        <header>
+          <h2>Bienvenido!!</h2>
+          <p>Esto es un juego de preguntas sobre cine</p>
+          <button id="iniciar_preguntas">Iniciar</button>
+        </header>
       </section>
-      <section class="respuestas">
-        <button class="button">A</button>
-        <button class="button">B</button>
-        <button class="button">C</button>
-        <button class="button">D</button>
+
+      <section class="hidden pantalla2" id="pantalla_preguntas">
+        <header class="contenedor_preguntas">
+          <h2 class="preguntas">PREGUNTA</h2>
+        </header>
+        <menu class="respuestas">
+          <li class="button">A</li>
+          <li class="button">B</li>
+          <li class="button">C</li>
+          <li class="button">D</li>
+        </menu>
+      </section>
+
+      <section class="hidden pantalla3" id="pantalla_final">
+        <header><h2>final</h2></header>
+        <p></p>
+        <button id="reset">voler al inicio</button>
       </section>
     </main>
+    <footer><p></p></footer>
 
     <script src="js/script.js"></script>
   </body>

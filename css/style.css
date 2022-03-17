@@ -1,28 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap");
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 15% 70% 15%;
+  /* grid-template-rows: 15% 70% 15%; */
   font-family: sans-serif;
   background-image: url();
+  background-color: brown;
 }
 
 .pantalla1 {
   height: 100%;
-  /*  background-image: url("/img/question.svg");
-  background-position: center;
-  background-repeat: no-repeat; */
+  width: 100%;
+  background-image: url("/img/pantalla-1.png");
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  text-shadow: 4px 4px 5px black;
+  padding: 22rem;
 }
 
 .pantalla2 {
   height: 100%;
+  width: 100%;
+  background-image: url("/img/pantalla_preguntas.png");
   display: grid;
   grid-template-rows: 60% 40%;
 }

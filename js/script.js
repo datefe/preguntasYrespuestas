@@ -35,7 +35,7 @@ const call = async () => {
 
       return arrQ;
     } else {
-      console.error("hubo un errror en la peticion de datos"); //  usar trow error
+      console.error("hubo un errror en la peticion de datos"); //  usar throw error
     }
   } catch {
     console.error(error, message);

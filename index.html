@@ -8,43 +8,45 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- <header>
-      <h1></h1>
-    </header> -->
+    <section class="pantalla1" id="pantalla_inicio">
+      <h2>
+        How much <br />do you know<br />
+        about movies?
+      </h2>
+      <p>
+        Click in Play<br />
+        to find out
+      </p>
 
-    <main>
-      <section class="pantalla1" id="pantalla_inicio">
-        <header>
-          <h2>Bienvenido al juego de preguntas sobre cine!!!</h2>
-          <p></p>
-          <!-- <button id="iniciar_preguntas">Iniciar</button> -->
-          <img
-            src="./img/play-button-svgrepo-com.svg"
-            alt="play-button"
-            id="iniciar_preguntas"
-          />
-        </header>
-      </section>
+      <img
+        src="./img/play-button-svgrepo-com.svg"
+        alt="play-button"
+        id="iniciar_preguntas"
+      />
+    </section>
 
-      <section class="hidden pantalla2" id="pantalla_preguntas">
-        <header class="contenedor_preguntas">
-          <h2 class="preguntas">PREGUNTA</h2>
-        </header>
-        <menu class="respuestas">
-          <li class="button">A</li>
-          <li class="button">B</li>
-          <li class="button">C</li>
-          <li class="button">D</li>
-        </menu>
-      </section>
+    <section class="hidden pantalla2" id="pantalla_preguntas">
+      <header class="contenedor_preguntas">
+        <h2 class="preguntas">PREGUNTA</h2>
+      </header>
+      <menu class="respuestas">
+        <li class="button">A</li>
+        <li class="button">B</li>
+        <li class="button">C</li>
+        <li class="button">D</li>
+      </menu>
+    </section>
 
-      <section class="hidden pantalla3" id="pantalla_final">
-        <header><h2>final</h2></header>
-        <p></p>
-        <button id="reset">voler al inicio</button>
-      </section>
-    </main>
-    <!-- <footer><p></p></footer> -->
+    <section class="hidden pantalla3" id="pantalla_final">
+      <h2>You have reached the end</h2>
+      <p>Give it another try??</p>
+
+      <img
+        src="./img/play-button-svgrepo-com.svg"
+        alt="play-button"
+        id="reset"
+      />
+    </section>
 
     <script src="js/script.js"></script>
   </body>

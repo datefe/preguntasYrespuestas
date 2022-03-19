@@ -1,10 +1,10 @@
 "use strict";
 
 const questions = document.querySelector(".preguntas");
-const buttonA = document.querySelector(".button:nth-child(1)");
-const buttonB = document.querySelector(".button:nth-child(2)");
-const buttonC = document.querySelector(".button:nth-child(3)");
-const buttonD = document.querySelector(".button:nth-child(4)");
+const buttonA = document.querySelector(".box:nth-child(1)");
+const buttonB = document.querySelector(".box:nth-child(2)");
+const buttonC = document.querySelector(".box:nth-child(3)");
+const buttonD = document.querySelector(".box:nth-child(4)");
 const reset = document.getElementById("reset");
 
 const pantalla1 = document.getElementById("pantalla_inicio");

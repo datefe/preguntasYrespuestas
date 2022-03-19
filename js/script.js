@@ -1,15 +1,11 @@
 "use strict";
 
-const questions = document.querySelector(".preguntas");
-const buttonA = document.querySelector(".box:nth-child(1)");
-const buttonB = document.querySelector(".box:nth-child(2)");
-const buttonC = document.querySelector(".box:nth-child(3)");
-const buttonD = document.querySelector(".box:nth-child(4)");
-const reset = document.getElementById("reset");
+const respuestas = document.querySelectorAll(".box");
 
 const pantalla1 = document.getElementById("pantalla_inicio");
 const pantalla2 = document.getElementById("pantalla_preguntas");
 const pantalla3 = document.getElementById("pantalla_final");
+const pantallaError = document.getElementById("pantalla_error");
 
 let contadorAciertos = 0;
 let i = 0;
@@ -17,11 +13,24 @@ let i = 0;
 //   funcion que pinta las preguntas
 
 const printQuestion = (x, arr) => {
+  const questions = document.querySelector(".preguntas");
   questions.textContent = arr[x].question;
-  buttonA.textContent = arr[x].answers[0];
-  buttonB.textContent = arr[x].answers[1];
-  buttonC.textContent = arr[x].answers[2];
-  buttonD.textContent = arr[x].answers[3];
+  let j = 0;
+  for (const q of respuestas) {
+    q.textContent = arr[x].answers[j];
+    j++;
+  }
+};
+
+// funcion para el error
+
+const err = (e) => {
+  pantalla1.classList.add("hidden");
+  pantalla2.classList.add("hidden");
+  pantalla3.classList.add("hidden");
+  pantallaError.classList.remove("hidden");
+  document.getElementById("error").textContent = e;
+  document.getElementById("button_error").addEventListener("click", inicio);
 };
 
 //    funcion que llama al archivo json y nos devuelve un array
@@ -31,14 +40,13 @@ const call = async () => {
     const response = await fetch("/quiz.json");
 
     if (response.ok) {
-      const arrQ = await response.json();
-
-      return arrQ;
+      return await response.json();
     } else {
-      console.error("hubo un errror en la peticion de datos"); //  usar throw error
+      throw new Error("Fallo en la peticion de las preguntas al archivo");
     }
-  } catch {
-    console.error(error, message);
+  } catch (e) {
+    console.error(e);
+    err(e);
   }
 };
 
@@ -46,47 +54,87 @@ const call = async () => {
 
 const start = async () => {
   const arrQ = await call();
+
   pantalla1.classList.add("hidden");
   pantalla2.classList.remove("hidden");
+  contadorAciertos = 0;
+  document.getElementById("contador_correctas").textContent = contadorAciertos;
+
+  document.querySelector(".pantalla2>header>h2").textContent = `${i + 1}/${
+    arrQ.length
+  }`;
 
   printQuestion(i, arrQ);
-  buttonA.addEventListener("click", (e) => quest(e.target));
-  buttonB.addEventListener("click", (e) => quest(e.target));
-  buttonC.addEventListener("click", (e) => quest(e.target));
-  buttonD.addEventListener("click", (e) => quest(e.target));
+
+  for (const q of respuestas) {
+    q.addEventListener("click", prueba);
+  }
+  document.getElementById("volver_inicio").addEventListener("click", inicio);
+};
+const prueba = (e) => quest(e.target);
+
+const end = () => {
+  const reset = document.getElementById("reset");
+  pantalla2.classList.add("hidden");
+  pantalla3.classList.remove("hidden");
+  reset.addEventListener("click", inicio);
 };
 
 // compara las respuestas
 
 const quest = async (but) => {
+  for (const q of respuestas) {
+    q.removeEventListener("click", prueba);
+  }
+
+  but.classList.add("pregunta_seleccionada");
   const arrQ = await call();
 
-  if (but.textContent === arrQ[i].correct) {
-    contadorAciertos++;
-  }
+  setTimeout(() => {
+    if (i < arrQ.length) {
+      printQuestion(i, arrQ);
+    } else {
+      i = 0;
 
-  console.log(contadorAciertos);
+      end();
+    }
+    but.classList.remove("pregunta_correcta");
+    but.classList.remove("pregunta_erronea");
+    console.log(contadorAciertos);
+    document.querySelector(".pantalla2>header>h2").textContent = `${i + 1}/${
+      arrQ.length
+    }`;
 
-  i++;
+    for (const q of respuestas) {
+      q.addEventListener("click", prueba);
+    }
+  }, 1600);
 
-  if (i < arrQ.length) {
-    printQuestion(i, arrQ);
-  } else {
-    pantalla2.classList.add("hidden");
-    pantalla3.classList.remove("hidden");
-    reset.addEventListener("click", inicio);
-  }
+  setTimeout(() => {
+    if (but.textContent === arrQ[i].correct) {
+      contadorAciertos++;
+      document.getElementById(
+        "contador_correctas"
+      ).textContent = `✅ ${contadorAciertos}`;
+      but.classList.remove("pregunta_seleccionada");
+      but.classList.add("pregunta_correcta");
+    } else {
+      but.classList.remove("pregunta_seleccionada");
+      but.classList.add("pregunta_erronea");
+    }
+    i++;
+  }, 1000);
 };
 
 //    pantalla de inicio
 
 const inicio = () => {
   pantalla3.classList.add("hidden");
+  pantallaError.classList.add("hidden");
   pantalla1.classList.remove("hidden");
   const buttonInicio = document.getElementById("iniciar_preguntas");
   buttonInicio.addEventListener("click", start);
-  i = 0;
-  contadorAciertos = 0;
+  i = 45;
 };
 
 inicio();

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
@@ -19,22 +18,31 @@ body {
 .pantalla1,
 .pantalla3 {
   height: 100vh;
-
   background-image: url("/img/pantalla-1.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-content: center; */
   align-items: center;
-  /* padding: 1rem; */
   font-family: "Bungee", sans-serif;
   font-kerning: normal;
   color: deeppink;
   font-size: 2rem;
   text-align: center;
   text-shadow: 3px 3px 4px black;
+}
+
+@media screen and (min-width: 650px) {
+  #iniciar_preguntas {
+    max-width: 5px;
+  }
+  .pantalla1,
+  .pantalla3 {
+    padding-top: 40px;
+    display: grid;
+    grid-template-rows: 30% 70%;
+  }
 }
 
 .pantalla1 p {
@@ -55,48 +63,25 @@ body {
   height: auto;
 }
 
-/* @media screen {
-
-  .pantalla1,
-.pantalla3 {
-  height: 100%;
-  width: 100%;
-  /* max-height: 100vh; */
-
-/* background-image: url("/img/pantalla-1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  padding: 22rem;
-  font-family: "Bungee", sans-serif;
-  font-kerning: normal;
-  color: deeppink;
-  font-size: 5rem;
-  text-shadow: 3px 3px 4px black;
-  
-} */
-
 .pantalla2 {
   height: 100vh;
   width: 100%;
   background-image: url("/img/pantalla_preguntas.png");
   display: grid;
   justify-items: center;
-
   grid-template-rows: 15% 70% 15%;
 }
 
 .pantalla2 > header {
-  /* margin-top: 1rem; */
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+#reset-button {
+  max-width: 10%;
+  height: auto;
 }
 
 .contenedor_juego {
@@ -145,8 +130,9 @@ footer {
 }
 
 footer p {
-  color: white;
-  background-color: rgb(245, 9, 40);
+  color: green;
+  background-color: greenyellow;
+  border: solid green;
   border-radius: 50%;
   padding: 1rem;
 }
@@ -165,4 +151,26 @@ footer p {
 
 .pregunta_erronea {
   background-color: rgb(233, 51, 51);
+}
+
+#pantalla_error {
+  height: 100vh;
+  background-image: url("/img/error-screen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-kerning: normal;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 3px 3px 4px black;
+}
+
+#button_error {
+  max-width: 30%;
+  height: auto;
 }

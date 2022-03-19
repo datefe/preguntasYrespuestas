@@ -27,7 +27,13 @@
 
     <section class="hidden pantalla2" id="pantalla_preguntas">
       <header>
-        <button>volver a inicio</button>
+        <!-- <button>RESET</button> -->
+        <img
+          src="./img/play-button-svgrepo-com.svg"
+          alt="play-button"
+          id="reset-button"
+        />
+
         <h2>5/50</h2>
       </header>
 
@@ -43,7 +49,7 @@
         </menu>
       </main>
       <footer>
-        <p class="contador_correctas" id="contador_correctas">✔️ 50</p>
+        <p class="contador_correctas" id="contador_correctas">✅ 50</p>
       </footer>
     </section>
 
@@ -55,6 +61,17 @@
         src="./img/play-button-svgrepo-com.svg"
         alt="play-button"
         id="reset"
+      />
+    </section>
+
+    <section class="hidden pantallaErr" id="pantalla_error">
+      <p id="error">
+        There was an error.<br />Don't worry, click the button to reset.
+      </p>
+      <img
+        src="./img/play-button-svgrepo-com.svg"
+        alt="play-button"
+        id="button_error"
       />
     </section>
 

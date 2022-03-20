@@ -37,7 +37,7 @@ const err = (e) => {
 
 const call = async () => {
   try {
-    const response = await fetch("/quiz.json");
+    const response = await fetch("/qui.json");
 
     if (response.ok) {
       return await response.json();

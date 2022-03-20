@@ -44,8 +44,9 @@ body {
   #iniciar_preguntas {
     max-width: 5px;
   }
-  #reset {
-    max-width: 2%;
+
+  #volver_inicio {
+    max-width: 1rem;
   }
 
   .contenedor_juego {
@@ -89,8 +90,17 @@ body {
   grid-template-rows: 15% 70% 15%;
 }
 
+.pantalla2 main header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
 .pantalla2 > header {
   width: 100%;
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -98,7 +108,6 @@ body {
 
 #volver_inicio {
   max-width: 10%;
-  height: auto;
 }
 
 #tryAgain {
@@ -156,21 +165,6 @@ footer p {
   border: solid green;
   border-radius: 50%;
   padding: 1rem;
-}
-
-.pantalla2 main header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1.5rem;
-  text-align: center;
-}
-
-.pantalla2 > header {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .hidden {

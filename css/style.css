@@ -37,12 +37,9 @@ body {
     display: flex;
     flex-direction: row;
   }
-  #iniciar_preguntas {
-    max-width: 5px;
-  }
 
-  #volver_inicio {
-    max-width: 1rem;
+  .pantalla2 > header {
+    max-width: 1000px;
   }
 
   .contenedor_juego {
@@ -55,6 +52,14 @@ body {
   }
   .box {
     font-size: 30px;
+  }
+
+  .pantallaErr > p {
+    max-width: 900px;
+  }
+
+  .pantallaErr > img {
+    max-width: 9px;
   }
 }
 
@@ -184,10 +189,11 @@ footer p {
   background-image: url("/img/error-screen.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  padding: 4rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-kerning: normal;
   color: white;

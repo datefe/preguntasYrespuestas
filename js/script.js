@@ -42,7 +42,7 @@ const call = async () => {
     if (response.ok) {
       return await response.json();
     } else {
-      throw new Error("Fallo en la peticion de las preguntas al archivo");
+      throw new Error("There was an error. Click reset button");
     }
   } catch (e) {
     console.error(e);
@@ -54,22 +54,24 @@ const call = async () => {
 
 const start = async () => {
   const arrQ = await call();
+  if (arrQ) {
+    pantalla1.classList.add("hidden");
+    pantalla2.classList.remove("hidden");
+    contadorAciertos = 0;
+    document.getElementById("contador_correctas").textContent =
+      contadorAciertos;
 
-  pantalla1.classList.add("hidden");
-  pantalla2.classList.remove("hidden");
-  contadorAciertos = 0;
-  document.getElementById("contador_correctas").textContent = contadorAciertos;
+    document.querySelector(".pantalla2>header>h2").textContent = `${i + 1}/${
+      arrQ.length
+    }`;
 
-  document.querySelector(".pantalla2>header>h2").textContent = `${i + 1}/${
-    arrQ.length
-  }`;
+    printQuestion(i, arrQ);
 
-  printQuestion(i, arrQ);
-
-  for (const q of respuestas) {
-    q.addEventListener("click", prueba);
+    for (const q of respuestas) {
+      q.addEventListener("click", prueba);
+    }
+    document.getElementById("volver_inicio").addEventListener("click", inicio);
   }
-  document.getElementById("volver_inicio").addEventListener("click", inicio);
 };
 const prueba = (e) => quest(e.target);
 
@@ -134,7 +136,7 @@ const inicio = () => {
   pantalla1.classList.remove("hidden");
   const buttonInicio = document.getElementById("iniciar_preguntas");
   buttonInicio.addEventListener("click", start);
-  i = 45;
+  i = 0;
 };
 
 inicio();

@@ -101,6 +101,10 @@ body {
   height: auto;
 }
 
+#tryAgain {
+  color: deeppink;
+}
+
 .contenedor_juego {
   display: grid;
   grid-template-rows: 60% 40%;

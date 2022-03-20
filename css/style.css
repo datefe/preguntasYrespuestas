@@ -52,6 +52,13 @@ body {
     max-width: 900px;
     height: auto;
   }
+
+  .preguntas {
+    font-size: 50px;
+  }
+  .box {
+    font-size: 30px;
+  }
 }
 
 .pantalla1 p,
@@ -178,15 +185,15 @@ footer p {
   background-color: rgb(233, 51, 51);
 }
 
-#pantalla_error {
+.pantallaErr {
   height: 100vh;
   background-image: url("/img/error-screen.png");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-kerning: normal;
   color: white;

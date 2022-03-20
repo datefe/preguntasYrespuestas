@@ -168,10 +168,6 @@ footer p {
   padding: 1rem;
 }
 
-.hidden {
-  display: none;
-}
-
 .pregunta_seleccionada {
   background-color: lightskyblue;
 }
@@ -205,4 +201,8 @@ footer p {
 #button_error {
   max-width: 30%;
   height: auto;
+}
+
+.hidden {
+  display: none;
 }

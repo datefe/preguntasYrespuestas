@@ -76,7 +76,9 @@ const start = async () => {
 const prueba = (e) => quest(e.target);
 
 const end = () => {
- 
+  document.getElementById(
+    "aciertos_final"
+  ).textContent = `Numero de aciertos:  ${contadorAciertos}`;
   const reset = document.getElementById("reset");
   pantalla2.classList.add("hidden");
   pantalla3.classList.remove("hidden");
